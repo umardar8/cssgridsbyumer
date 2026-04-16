@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container { 
+            display: grid; grid-template-columns: 1fr 2fr;
+            grid-template-areas: 
+                "header header"
+                "sidebar maincontent"
+                "footer footer";
+            height: 100vh; width: 100vw;
+        }
+
+        .grid-item1 { grid-area: header; }
+        .grid-item2 { grid-area: sidebar; }
+        .grid-item3 { grid-area: maincontent; }
+        .grid-item4 { grid-area: footer; }
+
+        .box { background-color: aqua; border: 2px solid black;}
+
+        @media (max-width: 768px) {
+            .grid-container { 
+            display: grid; grid-template-columns: 1fr;
+            grid-template-areas: 
+                "header"
+                "sidebar"
+                "maincontent"
+                "footer";
+            height: 100vh; width: 100vw; 
+        }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="grid-container">
+
+        <div class="grid-item1 box">Header</div>
+        <div class="grid-item2 box">Sidebar</div>
+        <div class="grid-item3 box">Main Content</div>
+        <div class="grid-item4 box">Footer</div>
+
+    </div>
+
+</body>
+</html>
